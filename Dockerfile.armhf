@@ -1,6 +1,10 @@
 FROM golang:1.13-alpine AS build
 
-ENV CGO_ENABLED=0
+ENV \
+    CGO_ENABLED=0 \
+    GOOS=linux \
+    GOARCH=arm \
+    GOARM=7
 
 WORKDIR /build/rss2twitter
 ADD . /build/rss2twitter
